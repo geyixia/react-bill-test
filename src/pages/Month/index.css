@@ -20,7 +20,7 @@
 }
 
 .monthlyBill .content {
-  height: 573px;
+  height: 100%;
   padding: 0 10px;
   overflow-y: scroll;
   -ms-overflow-style: none;
