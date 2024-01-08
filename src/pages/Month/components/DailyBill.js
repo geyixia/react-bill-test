@@ -3,8 +3,11 @@ import "./index.scss";
 import { useMemo, useState } from "react";
 import {  billTypeToName } from "../../../utils/month";
 import Icon from '../../../components/Icon/index';
+import { delBillList } from "@/store/modules/billStore";
+import { useDispatch } from 'react-redux';
 
 const DailyBill = ({ date, billList }) => {
+  const dispatch = useDispatch()
   const dayResult = useMemo(() => {
     // 支出  /  收入  / 结余
     const pay = billList
@@ -20,6 +23,9 @@ const DailyBill = ({ date, billList }) => {
     };
   }, [billList]);
   const [up, setUp] = useState(false);
+  const deleteDateItem=(item)=>{
+    dispatch(delBillList(item.id))
+  }
   return (
     <div className={classNames("dailyBill")} onClick={()=>{setUp(!up)}}>
       <div className="header">
@@ -53,6 +59,7 @@ const DailyBill = ({ date, billList }) => {
               <div className={classNames("money", item.type)}>
                 {item.money.toFixed(2)}
               </div>
+              <div className="delete" onClick={()=>{deleteDateItem(item)}}>删除</div>
             </div>
           );
         })}

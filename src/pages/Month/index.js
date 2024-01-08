@@ -12,6 +12,7 @@ const Month = () => {
   // 按月分组
   const billList = useSelector(state => state.bill.billList)
   const monthGroup = useMemo(() => {
+    console.log('billList', billList)
     return _.groupBy(billList, item => dayjs(item.date).format('YYYY-MM'))
   }, [billList])
 
@@ -31,10 +32,11 @@ const Month = () => {
 
   // 首次加载
   useEffect(() => {
-    const list = monthGroup[dayjs().format('YYYY-MM')]
-    if(list){
+    console.log('monthGroup', monthGroup)
+    const list = monthGroup[dayjs().format('YYYY-MM')]||[]
+    // if(list){
       setMonthList(list)
-    }
+    // }
   }, [monthGroup])
 
   // 计算统计

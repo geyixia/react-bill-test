@@ -1,0 +1,66 @@
+.billDetail {
+  --ka-text-color: #191d26;
+  height: 100%;
+  background-image: url(https://zqran.gitee.io/images/ka/bill-bg.png);
+  background-size: 100% 380px;
+  background-repeat: no-repeat;
+  background-color: rgba(245, 245, 245, 0.9);
+  color: var(--ka-text-color);
+}
+
+.billDetail .nav {
+  --adm-font-size-10: 16px;
+  color: #121826;
+  background-color: transparent;
+}
+
+.billDetail .nav::after {
+  height: 0;
+}
+
+.billDetail .nav .nav-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.billDetail .nav .arrow {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-top: -3px;
+  margin-left: 9px;
+  border-top: 2px solid #121826;
+  border-left: 2px solid #121826;
+  transform: rotate(225deg);
+  transform-origin: center;
+  transition: all 0.3s;
+}
+
+.billDetail .nav .expand {
+  transform: translate(0, 2px) rotate(45deg);
+}
+
+.billDetail .content {
+  height: calc(100% - 60px);
+  overflow-y: scroll;
+}
+
+.billDetail .content > .overview {
+  width: 290px;
+  padding: 20px;
+}
+
+.billDetail .content .monthBill {
+  --ka-text-color: #888c98;
+  height: 75px;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.billDetail .content .monthBill .date {
+  margin-bottom: 10px;
+  font-size: 16px;
+}

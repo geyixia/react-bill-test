@@ -138,6 +138,21 @@
   color: #4f827c;
 }
 
+.dailyBill .billList .bill:hover .delete {
+  display: block;
+  color: #e56a77;
+}
+
+.dailyBill .billList .delete {
+  margin-left: 16px;
+  display: block;
+  color: #e56a77;
+}
+
+.dailyBill .billList .delete:hover {
+  color: #000;
+}
+
 .dailyBill.expand .header {
   border-bottom: 1px solid #ececec;
 }

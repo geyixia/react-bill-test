@@ -121,6 +121,20 @@
           color: #4f827c;
         }
       }
+      &:hover {
+        .delete {
+          display: block;
+          color: #e56a77;
+        }
+      }
+    }
+    .delete {
+      margin-left: 16px;
+      display: block;
+      color: #e56a77;
+      &:hover {
+        color: #000;
+      }
     }
   }
 }
